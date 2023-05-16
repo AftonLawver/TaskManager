@@ -19,6 +19,17 @@ void __fastcall TForm1::addTaskButtonClick(TObject *Sender)
 	String taskText = taskInputField->Text;
 	tasksListBox->Items->Add(taskText);
 	taskInputField->Text = "";
+	FDConnection1->Connected=true;
+	if(FDConnection1->Connected)
+	{
+		 statusLabel->Text = "Successfully connected to Database";
+		// Open a Table or tables and do some other commands
+	}
+	else
+	{
+    	statusLabel->Text = "Could not connect to Database";
+	   // Show message that you can't connect, may be use has wrong username or password
+	}
 }
 //---------------------------------------------------------------------------
 void __fastcall TForm1::tasksListBoxItemClick(TCustomListBox * const Sender, TListBoxItem * const Item)

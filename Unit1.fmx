@@ -50,7 +50,7 @@ object Form1: TForm1
   end
   object deleteTaskButton: TButton
     Position.X = 248.000000000000000000
-    Position.Y = 208.000000000000000000
+    Position.Y = 200.000000000000000000
     Size.Width = 145.000000000000000000
     Size.Height = 41.000000000000000000
     Size.PlatformDefault = False
@@ -69,5 +69,36 @@ object Form1: TForm1
     Text = 'Complete task'
     Visible = False
     OnClick = completeTaskButtonClick
+  end
+  object statusLabel: TLabel
+    Position.X = 248.000000000000000000
+    Position.Y = 304.000000000000000000
+    Size.Width = 145.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 10
+  end
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      'User_Name=sqluser'
+      'Password=password'
+      'DriverID=MySQL')
+    Left = 256
+    Top = 208
+  end
+  object DataSource1: TDataSource
+    DataSet = FDQuery1
+    Left = 256
+    Top = 264
+  end
+  object FDQuery1: TFDQuery
+    Connection = FDConnection1
+    Left = 336
+    Top = 208
+  end
+  object FDCommand1: TFDCommand
+    Connection = FDConnection1
+    Left = 336
+    Top = 264
   end
 end
